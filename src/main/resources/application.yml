@@ -1,0 +1,14 @@
+server:
+  port: 8446
+  servlet:
+    context-path: /api/v1
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/hotel
+    username: postgres
+    password: postgres
