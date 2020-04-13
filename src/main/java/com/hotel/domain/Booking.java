@@ -16,7 +16,7 @@ import java.util.List;
 @Entity
 public class Booking  extends BaseEntity {
 
-    @OneToMany(mappedBy = "apartment")
+    @OneToMany(mappedBy = "id")
     private List<Apartment> apartments;
 
     @Column(name = "startDate", nullable = false)
