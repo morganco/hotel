@@ -7,26 +7,22 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Table
 @Entity
-public class Hotel extends BaseEntity {
-
-    @Column(name = "name", nullable = false)
-    private String name;
-
-    @Column(name = "guestsCount", nullable = false)
-    private Integer guestsCount;
+public class Booking  extends BaseEntity {
 
     @OneToMany(mappedBy = "apartment")
     private List<Apartment> apartments;
 
-    @Column(name = "organisation_id", nullable = true)
-    private Long organisationId;
+    @Column(name = "startDate", nullable = false)
+    private LocalDateTime startDate;
 
-    @Column(name = "city_id", nullable = true)
-    private Long cityId;
+    @Column(name = "finishDate", nullable = false)
+    private LocalDateTime finishDate;
+
 }
