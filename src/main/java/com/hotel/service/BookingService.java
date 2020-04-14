@@ -2,6 +2,7 @@ package com.hotel.service;
 
 import com.hotel.domain.Apartment;
 import com.hotel.domain.Booking;
+import com.hotel.repository.ApartmentRepository;
 import com.hotel.repository.BookingRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,7 @@ public class BookingService extends CRUDService<Booking, Long, BookingRepository
 
     private BookingRepository bookingRepository;
 
-    private ApartmentService apartmentService;
+    private ApartmentRepository apartmentRepository;
 
     @Override
     BookingRepository getApartmentTypeRepository() {
@@ -44,7 +45,7 @@ public class BookingService extends CRUDService<Booking, Long, BookingRepository
                 .map(Booking::getApartments)
                 .forEach(apartments -> apartments.forEach(apartment -> {
                     apartment.setIsOrdered(false);
-                    apartmentService.save(apartment);
+                    apartmentRepository.save(apartment);
                 }));
 
     }
