@@ -1,7 +1,6 @@
 package com.hotel.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +11,9 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Table
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Hotel extends BaseEntity {
 
@@ -29,4 +31,5 @@ public class Hotel extends BaseEntity {
 
     @Column(name = "city_id", nullable = true)
     private Long cityId;
+
 }

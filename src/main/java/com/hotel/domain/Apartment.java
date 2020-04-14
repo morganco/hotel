@@ -1,7 +1,6 @@
 package com.hotel.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
@@ -9,6 +8,9 @@ import javax.persistence.*;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Table
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Apartment extends BaseEntity {
 
