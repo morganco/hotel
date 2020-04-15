@@ -45,8 +45,10 @@ public class ApartmentTypeController {
     }
 
     @PutMapping("/")
-    public ResponseEntity<ApartmentTypeDTO> updateApartmentType(@RequestBody ApartmentType type) {
-        return ResponseEntity.ok(mapper.toDTO(service.save(type)));
+    public ResponseEntity<ApartmentTypeDTO> updateApartmentType(
+            @RequestBody ApartmentTypeDTO type) {
+        return ResponseEntity
+                .ok(mapper.toDTO(service.save(mapper.fromDTO(type))));
     }
 
     @DeleteMapping("/{id}")
